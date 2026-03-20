@@ -1,0 +1,28 @@
+<html>
+    <body>
+
+   <p>
+      <a href="{{ url_for('student.student') }}"><button type="button">Add Student</button></a>
+   </p>
+
+   <table border = 1>
+      <tr>
+         <th>Name</th>
+         <th>School</th>
+         <th>Actions</th>
+      </tr>
+      {% for student in result %}
+         <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.school }}</td>
+            <td>
+               <a href="/student/edit/{{ student.id }}">Update</a>
+               <form action="/student/delete/{{ student.id }}" method="post" style="display:inline;">
+                  <button type="submit" onclick="return confirm('Delete this student?');">Delete</button>
+               </form>
+            </td>
+         </tr>
+      {% endfor %}
+   </table>
+    </body>
+</html>

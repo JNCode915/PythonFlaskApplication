@@ -1,0 +1,2 @@
+A Python Flask Application for CRUD Operations
+Different layers like Service, Model,Routes are used to show separation of concern and for easy readability and understanding.
